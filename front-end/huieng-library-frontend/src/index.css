@@ -1,0 +1,157 @@
+@font-face {
+  font-family: roboto;
+  src: url("../src/assets/fonts/RobotoMono-Regular.ttf");
+}
+
+@font-face {
+  font-family: roboto-bold;
+  src: url("../src/assets/fonts/RobotoMono-Bold.ttf");
+}
+
+@font-face {
+  font-family: roboto-bold-italic;
+  src: url("../src/assets/fonts/RobotoMono-BoldItalic.ttf");
+}
+@font-face {
+  font-family: roboto-extra-light;
+  src: url("../src/assets/fonts/RobotoMono-ExtraLight.ttf");
+}
+
+@font-face {
+  font-family: roboto-extra-light-italic;
+  src: url("../src/assets/fonts/RobotoMono-ExtraLightItalic.ttf");
+}
+
+@font-face {
+  font-family: roboto-italic;
+  src: url("../src/assets/fonts/RobotoMono-Italic.ttf");
+}
+
+@font-face {
+  font-family: roboto-light;
+  src: url("../src/assets/fonts/RobotoMono-Light.ttf");
+}
+
+@font-face {
+  font-family: roboto-light-italic;
+  src: url("../src/assets/fonts/RobotoMono-LightItalic.ttf");
+}
+
+@font-face {
+  font-family: roboto-medium;
+  src: url("../src/assets/fonts/RobotoMono-Medium.ttf");
+}
+
+@font-face {
+  font-family: roboto-medium-italic;
+  src: url("../src/assets/fonts/RobotoMono-MediumItalic.ttf");
+}
+
+@font-face {
+  font-family: roboto-semi-bold;
+  src: url("../src/assets/fonts/RobotoMono-SemiBold.ttf");
+}
+
+@font-face {
+  font-family: roboto-semi-bold-italic;
+  src: url("../src/assets/fonts/RobotoMono-SemiBoldItalic.ttf");
+}
+
+@font-face {
+  font-family: roboto-thin;
+  src: url("../src/assets/fonts/RobotoMono-Thin.ttf");
+}
+
+@font-face {
+  font-family: roboto-thin-italic;
+  src: url("../src/assets/fonts/RobotoMono-ThinItalic.ttf");
+}
+
+@import "tailwindcss";
+
+@theme {
+  --font-roboto: roboto;
+  --font-roboto-bold: roboto-bold;
+  --font-roboto-bold-italic: roboto-bold-italic;
+  --font-roboto-extra-light: roboto-extra-light;
+  --font-roboto-extra-light-italic: roboto-extra-light-italic;
+  --font-roboto-italic: roboto-italic;
+  --font-roboto-light: roboto-light;
+  --font-roboto-light-italic: roboto-light-italic;
+  --font-roboto-medium: roboto-medium;
+  --font-roboto-medium-italic: roboto-medium-italic;
+  --font-roboto-semi-bold: roboto-semi-bold;
+  --font-roboto-semi-bold-italic: roboto-semi-bold-italic;
+  --font-roboto-thin: roboto-thin;
+  --font-roboto-thin-italic: roboto-thin-italic;
+}
+
+:root {
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* a {
+  font-weight: 500;
+  color: #646cff;
+  text-decoration: inherit;
+}
+a:hover {
+  color: #535bf2;
+} */
+
+body {
+  margin: 0;
+  display: flex;
+  place-items: center;
+  min-width: 320px;
+  min-height: 100vh;
+  background-color: #fccee8;
+}
+
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+}
+
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #1a1a1a;
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+button:hover {
+  border-color: #646cff;
+}
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    background-color: #ffffff;
+  }
+  a:hover {
+    color: #747bff;
+  }
+  button {
+    background-color: #f9f9f9;
+  }
+}
