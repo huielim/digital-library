@@ -17,7 +17,9 @@ const BookCard = ({ title, author, cover, description }: BookCardProps) => {
         align="left-align"
         heading={title}
         subtext={
-          <div className="font-roboto-medium-italic"> {description}</div>
+          <>
+          <div className="font-roboto-medium-italic"> {author}</div>
+          <div className="font-roboto-medium-italic"> {description}</div></>
         }
         buttonText="Close"
         onClick={() => setShowModal(false)}

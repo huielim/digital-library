@@ -158,11 +158,10 @@ export interface Media {
  */
 export interface Book {
   id: number;
+  isbn: string;
   title: string;
   author: string;
-  description?: string | null;
   cover: string;
-  read?: boolean | null;
   updatedAt: string;
   createdAt: string;
 }
@@ -280,11 +279,10 @@ export interface MediaSelect<T extends boolean = true> {
  * via the `definition` "books_select".
  */
 export interface BooksSelect<T extends boolean = true> {
+  isbn?: T;
   title?: T;
   author?: T;
-  description?: T;
   cover?: T;
-  read?: T;
   updatedAt?: T;
   createdAt?: T;
 }

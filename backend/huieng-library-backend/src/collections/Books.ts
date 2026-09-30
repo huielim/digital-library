@@ -5,11 +5,9 @@ export const Books: CollectionConfig = {
   access: { read: () => true },
 
   fields: [
+    {name: 'isbn', type: 'text', required: true},
     { name: 'title', label: 'Title', type: 'text', required: true },
     { name: 'author', type: 'text', required: true },
-    { name: 'description', type: 'text' },
     { name: 'cover', type: 'text', required: true },
-    { name: 'publishedDate', type: 'date', required: true },
-    { name: 'read', type: 'checkbox' },
   ],
 }

@@ -2,11 +2,22 @@ import { Link } from "react-router-dom";
 import { Modal } from "./modal";
 import fetchBook from "../Book";
 import { useState } from "react";
+import { getBook } from "../helper/getBook";
+import { AddBookModal } from "./addBookModal";
 
 const bookData = await fetchBook("http://localhost:3000/api/books");
 
+// const handleAddBookClick = () => {
+//   const isbn = prompt("Enter ISBN:");
+//   console.log("ISBN entered:", isbn);
+// }
+
+
+
+
 export const NavBar = () => {
   const [showModal, setShowModal] = useState(false);
+  const [showAddBookModal, setShowAddBookModal] = useState(false);
   return (
     <div className="w-screen nav-bar space-x-3">
       <Modal
@@ -28,6 +39,8 @@ export const NavBar = () => {
         showModal={showModal}
       />
 
+      <AddBookModal showModal={showAddBookModal} />
+
       <div className="nav-button font-roboto-medium">
         <Link to={"/"}>Shelved</Link>
       </div>
@@ -42,6 +55,11 @@ export const NavBar = () => {
       <div className="font-roboto-medium">
         <button className="nav-button" onClick={() => setShowModal(true)}>
           Currently Reading
+        </button>
+      </div>
+      <div className="font-roboto-medium">
+        <button className="nav-button" onClick={() => setShowAddBookModal(true)}>
+          Add Book
         </button>
       </div>
     </div>
