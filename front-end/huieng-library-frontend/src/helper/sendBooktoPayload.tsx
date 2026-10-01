@@ -15,7 +15,6 @@ export const sendBook = async (Book: GetBook) => {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
-        'Authorization': '00cf3eb4c709c4adbb191618',
       },
       body: JSON.stringify({
         isbn: Book.isbn,
