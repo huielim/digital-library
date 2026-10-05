@@ -1,15 +1,17 @@
-
 export type GetBook = {
-    isbn: string;
-    title: string;
-    // description?: string;
-    author: string;
-    cover?: string;
-}
+  isbn: string;
+  title: string;
+  // description?: string;
+  author: string;
+  cover?: string;
+  publishDate: string;
+  publisher: string;
+  pages: number;
+};
 
 export async function getBook(isbn: string): Promise<GetBook | null> {
   const response = await fetch(
-    `https://openlibrary.org/search.json?isbn=${encodeURIComponent(isbn)}`
+    `https://openlibrary.org/search.json?isbn=${encodeURIComponent(isbn)}`,
   );
 
   if (!response.ok) {
@@ -32,5 +34,8 @@ export async function getBook(isbn: string): Promise<GetBook | null> {
     cover: book.cover_i
       ? `https://covers.openlibrary.org/b/id/${book.cover_i}-M.jpg`
       : undefined,
+    publishDate: book.first_publish_year ?? "Unknown publish date",
+    publisher: book.publisher?.[0] ?? "Unknown publisher",
+    pages: book.number_of_pages_median ?? 0,
   };
 }

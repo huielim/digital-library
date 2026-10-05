@@ -4,8 +4,9 @@ import BookCard from "../components/bookCard";
 
 const bookData = await fetchBook("http://localhost:3000/api/books");
 const books = bookData.docs;
+const libCount = books.length;
 
-console.log("books", books);
+console.log("no of books:", libCount);
 
 export const HomePage = () => {
   return (
@@ -18,7 +19,7 @@ export const HomePage = () => {
             key={b.id}
             title={b.title}
             author={b.author}
-            cover={b.cover}
+            cover={b.coverURL}
             description={b.description}
           />
         ))}

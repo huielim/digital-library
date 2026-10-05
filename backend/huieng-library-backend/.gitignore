@@ -42,6 +42,9 @@ next-env.d.ts
 
 /media
 
+# databse
+huieng-library-backend.db
+
 # Playwright
 node_modules/
 /test-results/

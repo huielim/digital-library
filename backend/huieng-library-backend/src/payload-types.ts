@@ -161,7 +161,11 @@ export interface Book {
   isbn: string;
   title: string;
   author: string;
-  cover: string;
+  coverURL?: string | null;
+  publisher?: string | null;
+  publishDate?: string | null;
+  pages?: number | null;
+  description?: string | null;
   updatedAt: string;
   createdAt: string;
 }
@@ -282,7 +286,11 @@ export interface BooksSelect<T extends boolean = true> {
   isbn?: T;
   title?: T;
   author?: T;
-  cover?: T;
+  coverURL?: T;
+  publisher?: T;
+  publishDate?: T;
+  pages?: T;
+  description?: T;
   updatedAt?: T;
   createdAt?: T;
 }

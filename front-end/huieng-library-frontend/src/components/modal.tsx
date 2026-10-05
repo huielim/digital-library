@@ -6,6 +6,7 @@ type ModalProps = {
   subtext?: React.ReactNode;
   buttonText?: string;
   onClick?: () => void;
+  onClose?: () => void;
   showModal: boolean;
 };
 
@@ -15,6 +16,7 @@ export const Modal = ({
   subtext,
   buttonText,
   onClick,
+  onClose,
   showModal,
 }: ModalProps) => {
   return (
@@ -22,6 +24,11 @@ export const Modal = ({
       className={`h-screen w-screen items-center flex justify-center modal-background ${
         !showModal && "hidden"
       }`}
+      onClick={(e) => {
+        if (e.target === e.currentTarget) {
+          onClose?.();
+        }
+      }}
     >
       <div
         className={`bg-pink-400 rounded-xl modal shadow-2xl bounce p-10 ${

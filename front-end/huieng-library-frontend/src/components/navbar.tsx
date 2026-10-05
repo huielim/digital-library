@@ -2,7 +2,6 @@ import { Link } from "react-router-dom";
 import { Modal } from "./modal";
 import fetchBook from "../Book";
 import { useState } from "react";
-import { getBook } from "../helper/getBook";
 import { AddBookModal } from "./addBookModal";
 
 const bookData = await fetchBook("http://localhost:3000/api/books");
@@ -11,9 +10,6 @@ const bookData = await fetchBook("http://localhost:3000/api/books");
 //   const isbn = prompt("Enter ISBN:");
 //   console.log("ISBN entered:", isbn);
 // }
-
-
-
 
 export const NavBar = () => {
   const [showModal, setShowModal] = useState(false);
@@ -27,7 +23,7 @@ export const NavBar = () => {
           <div className="flex-col place-items-center justify-center font-roboto-italic">
             <p className="text-lg ">Currently Reading:</p>
             <div className="pt-4 flex justify-center">
-              <img className="w-[20%]" src={bookData.docs[0].cover} />
+              <img className="w-[50%]" src={bookData.docs[0].coverURL} />
             </div>
             <p className="pt-4 font-roboto-semi-bold">
               {bookData.docs[0].title}
@@ -36,10 +32,14 @@ export const NavBar = () => {
         }
         buttonText="Browse Books"
         onClick={() => setShowModal(false)}
+        onClose={() => setShowModal(false)}
         showModal={showModal}
       />
 
-      <AddBookModal showModal={showAddBookModal} />
+      <AddBookModal
+        showModal={showAddBookModal}
+        onClose={() => setShowAddBookModal(false)}
+      />
 
       <div className="nav-button font-roboto-medium">
         <Link to={"/"}>Shelved</Link>
@@ -58,7 +58,10 @@ export const NavBar = () => {
         </button>
       </div>
       <div className="font-roboto-medium">
-        <button className="nav-button" onClick={() => setShowAddBookModal(true)}>
+        <button
+          className="nav-button"
+          onClick={() => setShowAddBookModal(true)}
+        >
           Add Book
         </button>
       </div>
